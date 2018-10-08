@@ -9,7 +9,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 
-import TripForm from './trips/components/TripForm'
+import TripCreate from './trips/components/TripCreate'
 
 class App extends Component {
   constructor () {
@@ -50,6 +50,7 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn flash={this.flash} setUser={this.setUser} />
           )} />
+
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut flash={this.flash} clearUser={this.clearUser} user={user} />
           )} />
@@ -57,7 +58,7 @@ class App extends Component {
             <ChangePassword flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips' render={() => (
-            <TripForm />
+            <TripCreate user={user} />
           )} />
         </main>
       </React.Fragment>
