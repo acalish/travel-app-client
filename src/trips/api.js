@@ -38,3 +38,31 @@ export const indexTrip = (user) => {
     }
   })
 }
+
+export const updateTrip = (trip, user) => {
+  return fetch(apiUrl + '/trips/edit', {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Token token=${user.token}`
+    },
+    body: JSON.stringify({
+      trip: {
+        name: trip.name,
+        destination: trip.destination,
+        start_date: trip.startDate,
+        end_date: trip.endDate
+      }
+    })
+  })
+}
+
+export const deleteTrip = (tripId, user) => {
+  return fetch(apiUrl + '/trips/' + tripId, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Token token=${user.token}`
+    }
+  })
+}

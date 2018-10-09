@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { handleErrors, createTrip, indexTrip } from '../api'
+import { handleErrors, createTrip, indexTrip, deleteTrip } from '../api'
 import apiUrl from '../../apiConfig'
 
 class TripIndex extends React.Component {
@@ -18,6 +18,13 @@ class TripIndex extends React.Component {
     this.setState({trips: responseJSON.trips})
   }
 
+  async deleteTrip(event, tripId) {
+    console.log(tripId)
+    event.preventDefault()
+
+    await deleteTrip(tripId, this.props.user)
+    this.setState({trips: this.state.trips.filter(trip => trip.id !== tripId)})
+  }
 
   render() {
     const tripListing = this.state.trips.map(trip => {
@@ -28,7 +35,7 @@ class TripIndex extends React.Component {
           <p>{trip.start_date}</p>
           <p>{trip.end_date}</p>
           {/* <p><Link to={`trips/${trip.id}/show`}>{trip.name}</Link></p> */}
-          <p><Link to={`/trips/${trip.id}/edit`}>update</Link> | <a href="" onClick={(event) => this.deleteTrip(event, trip.id)}>delete</a></p>
+          <p><Link to={`/trips/${trip.id}/update`}>update</Link> | <a href="" onClick={(event) => this.deleteTrip(event, trip.id)}>delete</a></p>
         </div>
       )
     })
