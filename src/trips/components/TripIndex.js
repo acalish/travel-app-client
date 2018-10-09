@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { handleErrors, createTrip, indexTrip } from '../api'
 import apiUrl from '../../apiConfig'
 
@@ -26,6 +27,8 @@ class TripIndex extends React.Component {
           <p>{trip.destination}</p>
           <p>{trip.start_date}</p>
           <p>{trip.end_date}</p>
+          {/* <p><Link to={`trips/${trip.id}/show`}>{trip.name}</Link></p> */}
+          <p><Link to={`/trips/${trip.id}/edit`}>update</Link> | <a href="" onClick={(event) => this.deleteTrip(event, trip.id)}>delete</a></p>
         </div>
       )
     })
