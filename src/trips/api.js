@@ -28,3 +28,13 @@ export const createTrip = (trip, user) => {
     })
   })
 }
+
+export const indexTrip = (user) => {
+  return fetch(apiUrl + '/trips', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Token token=${user.token}`
+    }
+  })
+}
