@@ -44,11 +44,9 @@ class TripIndex extends React.Component {
       <React.Fragment>
         <h1>Trips</h1>
 
-        <table>
-          <tbody>
-            {tripListing}
-          </tbody>
-        </table>
+        <div>
+          {tripListing}
+        </div>
       </React.Fragment>
     )
   }
