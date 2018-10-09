@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { handleErrors, createTrip } from '../api'
 import apiUrl from '../../apiConfig'
+import TripForm from './TripForm'
 
 class TripCreate extends Component {
   constructor() {
@@ -25,7 +26,9 @@ createTrip = event => {
   const { user } = this.props
 
   createTrip(this.state, user)
-    .then(console.log)
+    .then((res) => {console.log(res)
+      this.setState({})
+    })
     .catch(console.log)
     // .then(console.log(this.state, 'trip info'))
     // .then(console.log(this.props, 'user'))

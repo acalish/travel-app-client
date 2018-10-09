@@ -9,6 +9,8 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 
+// import TripsPage from './trips/TripsPage'
+import TripIndex from './trips/components/TripIndex'
 import TripCreate from './trips/components/TripCreate'
 
 class App extends Component {
@@ -58,6 +60,9 @@ class App extends Component {
             <ChangePassword flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips' render={() => (
+            <TripIndex user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/trips-create' render={() => (
             <TripCreate user={user} />
           )} />
         </main>
