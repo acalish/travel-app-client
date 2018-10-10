@@ -2,11 +2,10 @@ import React from 'react'
 
 const TripForm = (props) => {
   const { action, trip, handleChange, handleSubmit } = props
-  const formattedAction = action.charAt(0).toUpperCase() + action.slice(1)
 
   return (
     <React.Fragment>
-      <h1>{formattedAction} Trip</h1>
+      <h1>Trip</h1>
       <form className='trip-form' onSubmit={this.createTrip}>
         <label>Name: </label>
         <input name="name" onChange={this.handleChange} required placeholder="name" type="text" value={this.state.name} />
