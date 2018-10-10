@@ -19,7 +19,6 @@ class TripIndex extends React.Component {
   }
 
   async deleteTrip(event, tripId) {
-    console.log(tripId)
     event.preventDefault()
 
     await deleteTrip(tripId, this.props.user)
@@ -34,7 +33,6 @@ class TripIndex extends React.Component {
           <p>{trip.destination}</p>
           <p>{trip.start_date}</p>
           <p>{trip.end_date}</p>
-          {/* <p><Link to={`trips/${trip.id}/show`}>{trip.name}</Link></p> */}
           <p><Link to={`/trips/${trip.id}/update`}>update</Link> | <a href="" onClick={(event) => this.deleteTrip(event, trip.id)}>delete</a></p>
         </div>
       )

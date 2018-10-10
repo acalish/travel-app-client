@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { handleErrors, createTrip, indexTrip, updateTrip, showTrip } from '../api'
 import apiUrl from '../../apiConfig'
-// import TripForm from './TripForm'
 
 class TripUpdate extends Component {
   constructor(props) {
@@ -15,18 +14,6 @@ class TripUpdate extends Component {
       endDate: ''
     }
   }
-
-  // async componentDidMount() {
-  //   const response = await showTrip(this.props.match.params.id, this.props.user)
-  //   console.log('id', this.props.match.params.id)
-  //   console.log('user', this.props.user)
-  //   this.setState({trip: response.body.trip})
-  // }
-
-  // handleChange = event => {
-  //   const updatedTrip = {...this.state.trip, [event.target.name]: event.target.value}
-  //   this.setState({trip: updatedTrip})
-  // }
 
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
