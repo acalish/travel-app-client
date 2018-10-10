@@ -9,9 +9,9 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 
-// import TripsPage from './trips/TripsPage'
 import TripIndex from './trips/components/TripIndex'
 import TripCreate from './trips/components/TripCreate'
+import TripUpdate from './trips/components/TripUpdate'
 
 class App extends Component {
   constructor () {
@@ -59,11 +59,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/trips' render={() => (
+          <AuthenticatedRoute user={user} exact path='/trips' render={() => (
             <TripIndex user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips-create' render={() => (
             <TripCreate user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/trips/:id/update' render={() => (
+            <TripUpdate user={user} />
           )} />
         </main>
       </React.Fragment>
