@@ -61,7 +61,7 @@ class App extends Component {
             <TripIndex user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips-create' render={() => (
-            <TripCreate user={user} />
+            <TripCreate flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips/:id/update' render={() => (
             <TripUpdate user={user} />
