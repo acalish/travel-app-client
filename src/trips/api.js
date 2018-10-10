@@ -10,8 +10,8 @@ export const handleErrors = res => {
 }
 
 export const createTrip = (trip, user) => {
-  console.log('trip', trip)
-  console.log('user', user.token)
+  // console.log('trip', trip)
+  // console.log('user', user.token)
   return fetch(apiUrl + '/trips', {
     method: 'POST',
     headers: {
@@ -39,8 +39,20 @@ export const indexTrip = (user) => {
   })
 }
 
-export const updateTrip = (trip, user) => {
-  return fetch(apiUrl + '/trips/edit', {
+export const showTrip = (tripId, user) => {
+  return fetch(apiUrl + '/trips/' + tripId, {
+    method: 'GET',
+    headers: {
+      'Contect-Type': 'application/json',
+      'Authorization': `Token token=${user.token}`
+    }
+  })
+}
+
+export const updateTrip = (id, trip, user) => {
+  console.log('api id', id)
+  console.log('api user', user)
+  return fetch(apiUrl + '/trips/' + id, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -58,6 +70,8 @@ export const updateTrip = (trip, user) => {
 }
 
 export const deleteTrip = (tripId, user) => {
+  console.log('delete id', tripId)
+  console.log('delete user', user)
   return fetch(apiUrl + '/trips/' + tripId, {
     method: 'DELETE',
     headers: {
