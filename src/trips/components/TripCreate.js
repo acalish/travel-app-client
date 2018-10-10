@@ -16,6 +16,13 @@ class TripCreate extends Component {
     }
   }
 
+  clearFormInfo = () => this.setState({
+    name: '',
+    destination: '',
+    startDate: '',
+    endDate: ''
+  })
+
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
@@ -26,14 +33,19 @@ class TripCreate extends Component {
     const { name, destination, startDate, endDate } = this.state
     const { user, history, flash } = this.props
 
-    if(name.split(' ').every((item) => item === '') || destination.split(' ').every((item) => item === '')) {
+    const checkValid = function() {if(name.split(' ').every((item) => item === '') || destination.split(' ').every((item) => item === '')) {
       return flash(messages.tripCreateError, 'flash-error')
-    }
+    }}
 
 
     createTrip(this.state, user)
       .then(handleErrors)
       .then(() => history.push('/trips'))
+      .then(checkValid())
+      .catch(error => {
+        this.clearFormInfo()
+        flash(messages.tripCreateError, 'flash-error')
+      })
   }
 
   render() {
