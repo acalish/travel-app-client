@@ -24,7 +24,6 @@ class ChangePassword extends Component {
 
     const { oldPassword, newPassword } = this.state
     const { flash, history, user } = this.props
-    console.log('user', user.id)
 
     changePassword(this.state, user)
       .then(handleErrors)

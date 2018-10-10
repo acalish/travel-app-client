@@ -24,7 +24,6 @@ class TripUpdate extends Component {
 
     const id = this.props.match.params.id
     const { name, destination, startDate, endDate } = this.state
-    console.log('state', this.state)
     const { history, user } = this.props
 
     updateTrip(id, this.state, user)

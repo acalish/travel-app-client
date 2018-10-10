@@ -10,8 +10,6 @@ export const handleErrors = res => {
 }
 
 export const createTrip = (trip, user) => {
-  // console.log('trip', trip)
-  // console.log('user', user.token)
   return fetch(apiUrl + '/trips', {
     method: 'POST',
     headers: {
@@ -50,8 +48,6 @@ export const showTrip = (tripId, user) => {
 }
 
 export const updateTrip = (id, trip, user) => {
-  console.log('api id', id)
-  console.log('api user', user)
   return fetch(apiUrl + '/trips/' + id, {
     method: 'PATCH',
     headers: {
@@ -70,8 +66,6 @@ export const updateTrip = (id, trip, user) => {
 }
 
 export const deleteTrip = (tripId, user) => {
-  console.log('delete id', tripId)
-  console.log('delete user', user)
   return fetch(apiUrl + '/trips/' + tripId, {
     method: 'DELETE',
     headers: {
