@@ -15,6 +15,11 @@ class SignIn extends Component {
     }
   }
 
+  clearUserInfo = () => this.setState({
+    email: '',
+    password:''
+  })
+
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
@@ -27,11 +32,15 @@ class SignIn extends Component {
 
     signIn(this.state)
       .then(res => res.ok ? res : new Error())
+
       .then(res => res.json())
       .then(res => setUser(res.user))
       .then(() => flash(messages.signInSuccess, 'flash-success'))
       .then(() => history.push('/'))
       .catch(() => flash(messages.signInFailure, 'flash-error'))
+      .finally(response => {
+        this.clearUserInfo()
+      })
   }
 
   render () {
