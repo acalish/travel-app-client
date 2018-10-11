@@ -41,7 +41,7 @@ class TripUpdate extends Component {
           required
           name="name"
           type="text"
-          placeholder="name"
+          placeholder={this.props.location.state.tripName}
           onChange={this.handleChange}
         />
         <label htmlFor="destination"></label>
@@ -49,7 +49,7 @@ class TripUpdate extends Component {
           required
           name="destination"
           type="text"
-          placeholder="destination"
+          placeholder={this.props.location.state.tripDestination}
           onChange={this.handleChange}
         />
         <label htmlFor="startDate"></label>
@@ -57,7 +57,6 @@ class TripUpdate extends Component {
           required
           name="startDate"
           type="date"
-          placeholder="startDate"
           onChange={this.handleChange}
         />
         <label htmlFor="endDate"></label>
@@ -65,7 +64,6 @@ class TripUpdate extends Component {
           required
           name="endDate"
           type="date"
-          placeholder="endDate"
           onChange={this.handleChange}
         />
         <button type='submit'>Update</button>

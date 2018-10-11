@@ -43,7 +43,12 @@ class TripIndex extends React.Component {
             <p>{trip.destination}</p>
             <p>{trip.start_date}</p>
             <p>{trip.end_date}</p>
-            <p><Link to={`/trips/${trip.id}/update`}>update</Link> | <a href="" onClick={(event) => this.deleteTrip(event, trip.id)}>delete</a></p>
+            <p><Link to={{
+              pathname: `/trips/${trip.id}/update`,
+              state: {tripName: trip.name,
+                tripDestination: trip.destination,
+                tripStartDate: trip.start_date}
+            }}>update</Link> | <a href="" onClick={(event) => this.deleteTrip(event, trip.id)}>delete</a></p>
           </CardBody>
         </Card>
       )
