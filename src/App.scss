@@ -1,6 +1,6 @@
-$success: #c7f282;
+$success: #d8c3a5;
 $warning: #f1e681;
-$error: #f08181;
+$error: #e0b29d;
 $charcoal: #ccc;
 
 $card-color: #e98074;
@@ -16,6 +16,7 @@ body {
 .flash-warning,
 .flash-error {
   border: 1px solid $charcoal;
+  border-radius: 5px;
   display: block;
   left: 25%;
   padding: 30px;

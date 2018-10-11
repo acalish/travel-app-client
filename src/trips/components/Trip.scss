@@ -2,9 +2,10 @@ $card-color: #e98074;
 $text: #404040;
 $background: #eae7dc;
 $nav: #e85a4f;
+$link-back: rgba(240, 240, 240, .7);
 
 .link {
-  background: rgba(240, 240, 240, .7);
+  background: $link-back;
   border-radius: 5px;
   color: $text;
   padding: 3px;
