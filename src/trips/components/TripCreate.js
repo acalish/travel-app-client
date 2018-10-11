@@ -62,10 +62,10 @@ class TripCreate extends Component {
           <input name="destination" onChange={this.handleChange} required placeholder="destination" type="text" value={this.state.destination} />
 
           <label>Start Date: </label>
-          <input name="startDate" onChange={this.handleChange} required placeholder="start date" type="date" value={this.state.startDate} />
+          <input name="startDate" onChange={this.handleChange} required placeholder="start date" max={this.state.endDate} type="date" value={this.state.startDate} />
 
           <label>End Date: </label>
-          <input name="endDate" onChange={this.handleChange} required placedholder="end date" type="date" value={this.state.endDate} />
+          <input name="endDate" onChange={this.handleChange} required placedholder="end date" min={this.state.startDate} type="date" value={this.state.endDate} />
 
           <button type="submit">Create</button>
         </form>
