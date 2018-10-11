@@ -66,6 +66,7 @@ class TripUpdate extends Component {
           required
           name="startDate"
           type="date"
+          max={this.state.endDate}
           onChange={this.handleChange}
         />
         <label htmlFor="endDate"></label>
@@ -73,6 +74,7 @@ class TripUpdate extends Component {
           required
           name="endDate"
           type="date"
+          min={this.state.startDate}
           onChange={this.handleChange}
         />
         <button type='submit'>Update</button>
