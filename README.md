@@ -25,7 +25,7 @@ As a user I want to sign up, sign in, change my password, sign out.
 As a registered user I want to create a new trip that has a destination, start and end dates, and a title (think Amanda’s Wedding or College Reunion).
 As a registered user I want to edit my trip.
 As a registered user I want to delete my trip.
-As a registered user I want to see all of my trips.
+As a registered user I want to see all of my trips. 
 
 
 #### Wireframes
