@@ -35,12 +35,13 @@ class SignIn extends Component {
 
       .then(res => res.json())
       .then(res => setUser(res.user))
-      .then(() => flash(messages.signInSuccess, 'flash-success'))
-      .then(() => history.push('/'))
-      .catch(() => flash(messages.signInFailure, 'flash-error'))
-      .finally(response => {
+      .then(() => {
         this.clearUserInfo()
-      })
+        flash(messages.signInSuccess, 'flash-success')})
+      .then(() => history.push('/'))
+      .catch(() => {
+        this.clearUserInfo()
+        flash(messages.signInFailure, 'flash-error')})
   }
 
   render () {
