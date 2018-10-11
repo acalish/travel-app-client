@@ -64,7 +64,7 @@ class App extends Component {
             <TripCreate flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips/:id/update' render={() => (
-            <TripUpdate user={user} />
+            <TripUpdate flash={this.flash} user={user} />
           )} />
         </main>
       </React.Fragment>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { handleErrors, createTrip, indexTrip, updateTrip, showTrip } from '../api'
 import apiUrl from '../../apiConfig'
+import messages from '../messages'
 
 class TripUpdate extends Component {
   constructor(props) {
@@ -24,11 +25,19 @@ class TripUpdate extends Component {
 
     const id = this.props.match.params.id
     const { name, destination, startDate, endDate } = this.state
-    const { history, user } = this.props
+    const { history, user, flash } = this.props
+
+    const checkValid = function() {if(name.split(' ').every((item) => item === '') || destination.split(' ').every((item) => item === '')) {
+      return flash(messages.tripCreateError, 'flash-error')
+    }}
 
     updateTrip(id, this.state, user)
       .then(handleErrors)
       .then(() => history.push('/trips'))
+      .then(checkValid())
+      .catch(error => {
+        flash(messages.tripEditError, 'flash-error')
+      })
   }
 
   render() {
