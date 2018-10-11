@@ -3,6 +3,15 @@ $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
 
+$card-color: #e98074;
+$text: #404040;
+$background: #eae7dc;
+$nav: #e85a4f;
+
+body {
+  background-color: $background;
+}
+
 .flash-success,
 .flash-warning,
 .flash-error {

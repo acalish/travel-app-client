@@ -1,17 +1,37 @@
 $charcoal: #bbb;
 
+$card-color: #e98074;
+$text: #404040;
+$background: #eae7dc;
+$nav: #e85a4f;
+
 .main-header {
   align-items: center;
+  background-color: $nav;
   border-bottom: 1px solid $charcoal;
   display: flex;
   height: 100px;
   padding: 0 20px;
+
+  .brand {
+    color: $background;
+  }
 
   a,
   span {
     font-size: 1.2em;
     margin: 0 15px;
   }
+}
+
+.nav-link {
+  background: rgba(240, 240, 240, .7);
+  border-radius: 5px;
+  color: $text;
+}
+
+a > nav {
+  color: white !important;
 }
 
 .main-header > nav {
@@ -24,7 +44,7 @@ $charcoal: #bbb;
 @media (max-width: 600px) {
   .main-header {
     flex-direction: column;
-    font-size: 0.7em;
+    font-size: .7em;
     height: auto;
     padding: 10px;
 
