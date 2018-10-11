@@ -23,15 +23,20 @@ Whenever I ran into an issue on this project, I would write down exactly what wa
 
 
 #### User Stories
-As a user I want to sign up, sign in, change my password, sign out.
-As a registered user I want to create a new trip that has a destination, start and end dates, and a title (think Amanda’s Wedding or College Reunion).
-As a registered user I want to edit my trip.
-As a registered user I want to delete my trip.
-As a registered user I want to see all of my trips.
+- As a user I want to sign up, sign in, change my password, sign out.
+- As a registered user I want to create a new trip that has a destination, start and end dates, and a title (think Amanda’s Wedding or College Reunion).
+- As a registered user I want to edit my trip.
+- As a registered user I want to delete my trip.
+- As a registered user I want to see all of my trips.
 
 
 #### Wireframes
 [Wireframe images](https://imgur.com/a/m7byaV0)
+
+## Set up on localhost
+- Fork and clone
+- Install dependencies with `npm install`
+- `npm start`
 
 
 
