@@ -57,6 +57,10 @@ class App extends Component {
             <SignOut flash={this.flash} clearUser={this.clearUser} user={user} />
           )} />
 
+          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+            <ChangePassword flash={this.flash} user={user} />
+          )} />
+
           <AuthenticatedRoute user={user} exact path='/trips' render={() => (
             <TripIndex user={user} />
           )} />
