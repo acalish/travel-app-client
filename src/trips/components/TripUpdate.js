@@ -28,7 +28,7 @@ class TripUpdate extends Component {
     const { history, user, flash } = this.props
 
     const checkValid = function() {if(name.split(' ').every((item) => item === '') || destination.split(' ').every((item) => item === '')) {
-      return flash(messages.tripCreateError, 'flash-error')
+      return flash(messages.tripEditError, 'flash-error')
     }}
 
     updateTrip(id, this.state, user)
