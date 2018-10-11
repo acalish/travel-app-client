@@ -12,7 +12,8 @@ Use the following demo credentials
 **Password:** demo
 
 ## Planning and Development Process
-###Front-end
+
+# Front-end
 
 My primary focus was to design a simple minimum viable product, and leave a lot of space to grow the app after my initial project sprint deadline.  With only four days, I had to scale down my vision, and then build out future iterations for myself when I have more time.  I also challenged myself to use React, which is a very new framework to me, so I focused heavily on making sure a user could login, and then perform CRUD actions on their trip resource.
 
