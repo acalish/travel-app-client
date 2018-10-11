@@ -2,6 +2,8 @@
 
 Go There, Do This! is a travel app that allows authenticated users to log trips.  In the future it will be built out to save more information like activities, restaurants, and general recommendations about locations.
 
+[GoThereDoThis](./public/screenshot.png)
+
 ## Test out the app!
 
 To try out the app for yourself, go to the deployed
@@ -25,7 +27,7 @@ As a user I want to sign up, sign in, change my password, sign out.
 As a registered user I want to create a new trip that has a destination, start and end dates, and a title (think Amanda’s Wedding or College Reunion).
 As a registered user I want to edit my trip.
 As a registered user I want to delete my trip.
-As a registered user I want to see all of my trips. 
+As a registered user I want to see all of my trips.
 
 
 #### Wireframes
