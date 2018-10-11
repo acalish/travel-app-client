@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { handleErrors, createTrip, indexTrip, updateTrip, showTrip } from '../api'
 import apiUrl from '../../apiConfig'
+import messages from '../messages'
 
 class TripUpdate extends Component {
   constructor(props) {
@@ -24,11 +25,19 @@ class TripUpdate extends Component {
 
     const id = this.props.match.params.id
     const { name, destination, startDate, endDate } = this.state
-    const { history, user } = this.props
+    const { history, user, flash } = this.props
+
+    const checkValid = function() {if(name.split(' ').every((item) => item === '') || destination.split(' ').every((item) => item === '')) {
+      return flash(messages.tripCreateError, 'flash-error')
+    }}
 
     updateTrip(id, this.state, user)
       .then(handleErrors)
       .then(() => history.push('/trips'))
+      .then(checkValid())
+      .catch(error => {
+        flash(messages.tripEditError, 'flash-error')
+      })
   }
 
   render() {
@@ -41,7 +50,7 @@ class TripUpdate extends Component {
           required
           name="name"
           type="text"
-          placeholder="name"
+          placeholder={this.props.location.state.tripName}
           onChange={this.handleChange}
         />
         <label htmlFor="destination"></label>
@@ -49,7 +58,7 @@ class TripUpdate extends Component {
           required
           name="destination"
           type="text"
-          placeholder="destination"
+          placeholder={this.props.location.state.tripDestination}
           onChange={this.handleChange}
         />
         <label htmlFor="startDate"></label>
@@ -57,7 +66,7 @@ class TripUpdate extends Component {
           required
           name="startDate"
           type="date"
-          placeholder="startDate"
+          max={this.state.endDate}
           onChange={this.handleChange}
         />
         <label htmlFor="endDate"></label>
@@ -65,7 +74,7 @@ class TripUpdate extends Component {
           required
           name="endDate"
           type="date"
-          placeholder="endDate"
+          min={this.state.startDate}
           onChange={this.handleChange}
         />
         <button type='submit'>Update</button>

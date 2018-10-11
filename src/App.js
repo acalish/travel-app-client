@@ -56,17 +56,15 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut flash={this.flash} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword flash={this.flash} user={user} />
-          )} />
+
           <AuthenticatedRoute user={user} exact path='/trips' render={() => (
             <TripIndex user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips-create' render={() => (
-            <TripCreate user={user} />
+            <TripCreate flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/trips/:id/update' render={() => (
-            <TripUpdate user={user} />
+            <TripUpdate flash={this.flash} user={user} />
           )} />
         </main>
       </React.Fragment>
