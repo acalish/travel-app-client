@@ -41,8 +41,8 @@ class TripIndex extends React.Component {
           <CardBody>
             <CardTitle>{trip.name}</CardTitle>
             <p>{trip.destination}</p>
-            <p>{trip.start_date}</p>
-            <p>{trip.end_date}</p>
+            <p>start date: {trip.start_date}</p>
+            <p>end date: {trip.end_date}</p>
             <p><Link to={{
               pathname: `/trips/${trip.id}/update`,
               state: {tripName: trip.name,
