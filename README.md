@@ -2,7 +2,7 @@
 
 Go There, Do This! is a travel app that allows authenticated users to log trips.  In the future it will be built out to save more information like activities, restaurants, and general recommendations about locations.
 
-[GoThereDoThis](./public/screenshot.png)
+![GoThereDoThis](./public/screenshot.png)
 
 ## Test out the app!
 
