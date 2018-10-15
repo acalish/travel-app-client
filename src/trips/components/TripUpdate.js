@@ -16,6 +16,17 @@ class TripUpdate extends Component {
     }
   }
 
+  async componentDidMount () {
+    const { user } = this.props
+    const id = this.props.match.params.id
+
+    const response = await showTrip(id, user)
+    const responseJSON = await response.json()
+
+    this.setState({name: responseJSON.trip.name})
+    this.setState({destination: responseJSON.trip.destination})
+  }
+
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
@@ -24,7 +35,7 @@ class TripUpdate extends Component {
     event.preventDefault()
 
     const id = this.props.match.params.id
-    const { name, destination, startDate, endDate } = this.state
+    const { name, destination, start_date, end_date } = this.state
     const { history, user, flash } = this.props
 
     const checkValid = function() {if(name.split(' ').every((item) => item === '') || destination.split(' ').every((item) => item === '')) {
@@ -41,6 +52,9 @@ class TripUpdate extends Component {
   }
 
   render() {
+    const { name, destination, start_date, end_date } = this.state
+    console.log('start', start_date)
+    console.log('name', name)
 
     return (
       <form className='trip-form' onSubmit={this.updateTrip}>
@@ -50,7 +64,7 @@ class TripUpdate extends Component {
           required
           name="name"
           type="text"
-          placeholder={this.props.location.state.tripName}
+          value={name}
           onChange={this.handleChange}
         />
         <label htmlFor="destination"></label>
@@ -58,7 +72,7 @@ class TripUpdate extends Component {
           required
           name="destination"
           type="text"
-          placeholder={this.props.location.state.tripDestination}
+          value={destination}
           onChange={this.handleChange}
         />
         <label htmlFor="startDate"></label>
@@ -66,7 +80,8 @@ class TripUpdate extends Component {
           required
           name="startDate"
           type="date"
-          max={this.state.endDate}
+          value={start_date}
+          // max={this.state.endDate}
           onChange={this.handleChange}
         />
         <label htmlFor="endDate"></label>
@@ -74,7 +89,8 @@ class TripUpdate extends Component {
           required
           name="endDate"
           type="date"
-          min={this.state.startDate}
+          value={end_date}
+          // min={this.state.startDate}
           onChange={this.handleChange}
         />
         <button type='submit'>Update</button>
