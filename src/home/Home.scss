@@ -2,13 +2,14 @@ $card-color: #e98074;
 $text: #404040;
 $background: #eae7dc;
 $nav: #e85a4f;
+$text-back: rgba(0, 0, 0, .4);
 
 body {
   height: 100%;
 }
 
 .home-image {
-  background-image: url('./travel.jpg');
+  background-image: linear-gradient($text-back, $text-back), url('./travel.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,10 +18,18 @@ body {
 }
 
 .home-text {
-  color: $nav;
+  color: $background;
   left: 50%;
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 24px;
 }
