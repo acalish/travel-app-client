@@ -1,0 +1,26 @@
+$card-color: #e98074;
+$text: #404040;
+$background: #eae7dc;
+$nav: #e85a4f;
+
+body {
+  height: 100%;
+}
+
+.home-image {
+  background-image: url('./travel.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+}
+
+.home-text {
+  color: $nav;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

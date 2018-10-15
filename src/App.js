@@ -12,6 +12,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import TripIndex from './trips/components/TripIndex'
 import TripCreate from './trips/components/TripCreate'
 import TripUpdate from './trips/components/TripUpdate'
+import Home from './home/Home'
 
 class App extends Component {
   constructor () {
@@ -46,6 +47,10 @@ class App extends Component {
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
 
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Home />
+          )} />
+
           <Route path='/sign-up' render={() => (
             <SignUp flash={this.flash} setUser={this.setUser} />
           )} />
