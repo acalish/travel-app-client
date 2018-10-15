@@ -47,9 +47,16 @@ class TripIndex extends React.Component {
       )
     })
 
+    const noTrips = (
+      <p>{'You do not have any trips saved.  Click "Create" to log a trip.'}</p>
+    )
+
     return (
       <React.Fragment>
         <h1>Trips</h1>
+        <div>
+          {this.state.trips.length === 0 ? noTrips : null}
+        </div>
 
         <div className='card-parent'>
           {tripListing}
