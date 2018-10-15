@@ -8,12 +8,12 @@ import 'mdbreact/dist/css/mdb.css'
 
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 const appJsx = (
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>
+  </HashRouter>
 )
 
 ReactDOM.render(appJsx, document.getElementById('root'))
