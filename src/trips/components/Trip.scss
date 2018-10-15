@@ -22,3 +22,11 @@ $link-back: rgba(240, 240, 240, .7);
   display: flex;
   flex-wrap: wrap;
 }
+
+h1 {
+  color: $card-color;
+}
+
+p {
+  color: $card-color;
+}
