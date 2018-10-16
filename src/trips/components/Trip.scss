@@ -3,6 +3,9 @@ $text: #404040;
 $background: #eae7dc;
 $nav: #e85a4f;
 $link-back: rgba(240, 240, 240, .7);
+$text-back: rgba(0, 0, 0, .4);
+$card-back: rgba(0, 0, 0, .1);
+
 
 .link {
   background: $link-back;
@@ -12,8 +15,8 @@ $link-back: rgba(240, 240, 240, .7);
 }
 
 .trip-card {
-  background-color: $card-color;
-  color: $text;
+  background-image: linear-gradient($card-back, $card-back), url('./passport.jpg');
+  color: $nav;
   margin: 15px;
   width: 300px;
 }
@@ -21,6 +24,13 @@ $link-back: rgba(240, 240, 240, .7);
 .card-parent {
   display: flex;
   flex-wrap: wrap;
+}
+
+.no-trips {
+  color: $nav;
+  font-size: 30px;
+  margin: 40px;
+  text-align: center;
 }
 
 h1 {
