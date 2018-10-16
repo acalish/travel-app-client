@@ -60,7 +60,7 @@ class TripUpdate extends Component {
     return (
       <form className='trip-form' onSubmit={this.updateTrip}>
         <h3>Update Trip</h3>
-        <label htmlFor="name"></label>
+        <label htmlFor="name">Name: </label>
         <input
           required
           name="name"
@@ -68,7 +68,7 @@ class TripUpdate extends Component {
           value={name}
           onChange={this.handleChange}
         />
-        <label htmlFor="destination"></label>
+        <label htmlFor="destination">Destination: </label>
         <input
           required
           name="destination"
@@ -76,22 +76,22 @@ class TripUpdate extends Component {
           value={destination}
           onChange={this.handleChange}
         />
-        <label htmlFor="startDate"></label>
+        <label htmlFor="startDate">Start Date: </label>
         <input
           required
           name="startDate"
           type="date"
           value={start_date}
-          // max={this.state.endDate}
+          max={this.state.endDate}
           onChange={this.handleChange}
         />
-        <label htmlFor="endDate"></label>
+        <label htmlFor="endDate">End Date: </label>
         <input
           required
           name="endDate"
           type="date"
           value={end_date}
-          // min={this.state.startDate}
+          min={this.state.startDate}
           onChange={this.handleChange}
         />
         <button type='submit'>Update</button>
