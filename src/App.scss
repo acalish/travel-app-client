@@ -39,39 +39,34 @@ body {
   background-color: $error;
 }
 
-.auth-form {
+.auth-form,
+.trip-form {
+  background-color: $card-color;
+  border-radius: 5px;
+  color: $text;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 15% auto 0;
   max-width: 600px;
-
-
-  h3,
-  input {
-    margin-bottom: 5%;
-  }
-
-  button {
-    align-self: flex-end;
-    max-width: 200px;
-  }
+  padding: 20px;
 }
 
-.trip-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 15% auto 0;
-  max-width: 600px;
+h3 {
+  font-weight: bolder;
+}
 
-  h2,
-  input {
-    margin-bottom: 5%;
-  }
+h3,
+input {
+  margin-bottom: 5%;
+}
 
-  button {
-    align-self: flex-end;
-    max-width: 200px;
-  }
+button {
+  align-self: flex-end;
+  max-width: 200px;
+}
+
+h2,
+input {
+  margin-bottom: 5%;
 }

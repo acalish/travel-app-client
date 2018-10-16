@@ -53,8 +53,8 @@ class TripCreate extends Component {
 
     return (
       <React.Fragment>
-        <h2> Create a Trip Listing </h2>
         <form className='trip-form' onSubmit={this.createTrip}>
+          <h3> Add a Trip Listing </h3>
           <label>Name: </label>
           <input name="name" onChange={this.handleChange} required placeholder="name" type="text" value={this.state.name} />
 
