@@ -25,6 +25,7 @@ class TripUpdate extends Component {
 
     this.setState({name: responseJSON.trip.name})
     this.setState({destination: responseJSON.trip.destination})
+    this.setState({startDate: responseJSON.trip.startDate})
   }
 
   handleChange = event => this.setState({
