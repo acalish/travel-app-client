@@ -41,7 +41,7 @@ class SignUp extends Component {
         this.clearUserInfo()
       })
       .then(() => flash(messages.signUpSuccess, 'flash-success'))
-      .then(() => history.push('/trips'))
+      .then(() => history.push('/'))
       .catch(error => {
         this.clearUserInfo()
         flash(messages.signUpFailure, 'flash-error')
