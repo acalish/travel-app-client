@@ -54,8 +54,6 @@ class TripUpdate extends Component {
 
   render() {
     const { name, destination, start_date, end_date } = this.state
-    console.log('start', start_date)
-    console.log('name', name)
 
     return (
       <form className='trip-form' onSubmit={this.updateTrip}>
