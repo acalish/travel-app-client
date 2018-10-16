@@ -38,7 +38,7 @@ class SignIn extends Component {
       .then(() => {
         this.clearUserInfo()
         flash(messages.signInSuccess, 'flash-success')})
-      .then(() => history.push('/'))
+      .then(() => history.push('/trips'))
       .catch(() => {
         this.clearUserInfo()
         flash(messages.signInFailure, 'flash-error')})
