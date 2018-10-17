@@ -46,7 +46,7 @@ class App extends Component {
         <Header user={user} />
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
 
-        <main className="container">
+        <main className="container-fluid">
           <Route exact path='/' render={() => (
             <Home />
           )} />

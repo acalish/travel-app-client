@@ -7,7 +7,7 @@ class Home extends React.Component {
       <React.Fragment>
         <div className='home-image'>
           <div className='home-text'>
-            <h1>{'I haven\'t been everywhere, but it\'s on my list.'}</h1>
+            <h1 className='quote'>{'I haven\'t been everywhere, but it\'s on my list.'}</h1>
             <h3>- Susan Santag</h3>
           </div>
         </div>
