@@ -5,10 +5,13 @@ $text: #404040;
 $background: #eae7dc;
 $nav: #e85a4f;
 $link-back: rgba(240, 240, 240, .7);
+$bright-red: #c3002d;
+$teal: rgb(47, 160, 162);
 
 .main-header {
   align-items: center;
-  background-color: $nav;
+  // background-color: $nav;
+  background-color: $bright-red;
   border-bottom: 1px solid $charcoal;
   display: flex;
   height: 100px;
@@ -27,8 +30,12 @@ $link-back: rgba(240, 240, 240, .7);
 
 .nav-link {
   background: $link-back;
+  background-color: #333;
   border-radius: 5px;
-  color: $text;
+  color: $background;
+  &:hover {
+    color: $teal;
+  }
 }
 
 a > nav {

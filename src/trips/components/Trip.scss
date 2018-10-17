@@ -5,7 +5,13 @@ $nav: #e85a4f;
 $link-back: rgba(240, 240, 240, .7);
 $text-back: rgba(0, 0, 0, .4);
 $card-back: rgba(0, 0, 0, .1);
+$teal: rgb(47, 160, 162);
+$bright-red: #c3002d;
 
+.card-title {
+  color: $teal;
+  // text-shadow: 2px 2px 1px $teal;
+}
 
 .link {
   background: $link-back;
@@ -16,8 +22,7 @@ $card-back: rgba(0, 0, 0, .1);
 
 .trip-card {
   background-image: linear-gradient($card-back, $card-back), url('./passport.jpg');
-  color: $nav;
-  margin: 15px;
+  margin: 0 auto;
   width: 300px;
 }
 
