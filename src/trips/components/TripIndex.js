@@ -9,7 +9,8 @@ class TripIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      trips: []
+      trips: [],
+      loading: true
     }
   }
 
@@ -17,7 +18,11 @@ class TripIndex extends React.Component {
     const { history, user } = this.props
     const response = await indexTrip(user)
     const responseJSON = await response.json()
-    this.setState({trips: responseJSON.trips})
+    setTimeout(() => {
+      // after 1 second, loading will be false
+      this.setState({trips: responseJSON.trips, loading: false})
+    }, 1000)
+
   }
 
   async deleteTrip(event, tripId) {
@@ -49,18 +54,22 @@ class TripIndex extends React.Component {
     })
 
     const noTrips = (
-      <p className="no-trips">{'It looks like you do not have any trips saved.  Click "Log Trip" to add a trip.'}</p>
+      <p className="message">{'It looks like you do not have any trips saved.  Click "Log Trip" to add a trip.'}</p>
+    )
+
+    const hasTrips = (
+      <div className='card-parent'>
+        {tripListing}
+      </div>
     )
 
     return (
       <React.Fragment>
         <h1>Trips</h1>
-        <div>
-          {this.state.trips.length === 0 ? noTrips : null}
-        </div>
-
-        <div className='card-parent'>
-          {tripListing}
+        {/* if loading is true, display message, if not, show trips or noTrips */}
+        <div>{this.state.loading ?
+          <p className="message">✈️ loading your trips...</p>
+          :this.state.trips.length === 0 ? noTrips : hasTrips}
         </div>
       </React.Fragment>
     )

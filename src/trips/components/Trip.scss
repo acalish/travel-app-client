@@ -22,16 +22,19 @@ $bright-red: #c3002d;
 
 .trip-card {
   background-image: linear-gradient($card-back, $card-back), url('./passport.jpg');
-  margin: 0 auto;
+  justify-content: space-between;
+  margin: 10px;
   width: 300px;
 }
 
 .card-parent {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-.no-trips {
+.message {
   color: $nav;
   font-size: 30px;
   margin: 40px;
