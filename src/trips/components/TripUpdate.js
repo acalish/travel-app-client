@@ -23,9 +23,11 @@ class TripUpdate extends Component {
     const response = await showTrip(id, user)
     const responseJSON = await response.json()
 
+    // set all of the states to the response from the showTrip call
     this.setState({name: responseJSON.trip.name})
     this.setState({destination: responseJSON.trip.destination})
-    this.setState({startDate: responseJSON.trip.startDate})
+    this.setState({startDate: responseJSON.trip.start_date})
+    this.setState({endDate: responseJSON.trip.end_date})
   }
 
   handleChange = event => this.setState({
@@ -36,7 +38,7 @@ class TripUpdate extends Component {
     event.preventDefault()
 
     const id = this.props.match.params.id
-    const { name, destination, start_date, end_date } = this.state
+    const { name, destination, startDate, endDate } = this.state
     const { history, user, flash } = this.props
 
     const checkValid = function() {if(name.split(' ').every((item) => item === '') || destination.split(' ').every((item) => item === '')) {
@@ -53,7 +55,7 @@ class TripUpdate extends Component {
   }
 
   render() {
-    const { name, destination, start_date, end_date } = this.state
+    const { name, destination, startDate, endDate } = this.state
 
     return (
       <form className='trip-form' onSubmit={this.updateTrip}>
@@ -79,7 +81,7 @@ class TripUpdate extends Component {
           required
           name="startDate"
           type="date"
-          value={start_date}
+          value={startDate}
           max={this.state.endDate}
           onChange={this.handleChange}
         />
@@ -88,7 +90,7 @@ class TripUpdate extends Component {
           required
           name="endDate"
           type="date"
-          value={end_date}
+          value={endDate}
           min={this.state.startDate}
           onChange={this.handleChange}
         />
