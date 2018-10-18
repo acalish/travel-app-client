@@ -7,6 +7,9 @@ $card-color: #e98074;
 $text: #404040;
 $background: #eae7dc;
 $nav: #e85a4f;
+$bright-red: #c3002d;
+// $teal: rgb(62, 201, 203);
+$teal: rgb(47, 160, 162);
 
 body {
   background-color: $background;
@@ -41,13 +44,14 @@ body {
 
 .auth-form,
 .trip-form {
-  background-color: $card-color;
+  // background-color: $card-color;
+  background-color: $teal;
   border-radius: 5px;
-  color: $text;
+  color: $background;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15% auto 0;
+  margin: 5% auto 0;
   max-width: 600px;
   padding: 20px;
 }
@@ -67,10 +71,23 @@ input {
 
 button {
   align-self: flex-end;
+  background-color: $text;
+  border-radius: 5px;
+  color: $background;
   max-width: 200px;
+  padding: 10px;
+  &:hover {
+    background-color: $background;
+    color: $text;
+  }
 }
 
 h2,
 input {
   margin-bottom: 5%;
+}
+
+input {
+  border-radius: 5px;
+  padding-left: 10px;
 }
