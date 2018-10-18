@@ -7,6 +7,7 @@ $nav: #e85a4f;
 $link-back: rgba(240, 240, 240, .7);
 $bright-red: #c3002d;
 $teal: rgb(47, 160, 162);
+$grey: #404040;
 
 .main-header {
   align-items: center;
@@ -30,7 +31,7 @@ $teal: rgb(47, 160, 162);
 
 .nav-link {
   background: $link-back;
-  background-color: #333;
+  background-color: $grey;
   border-radius: 5px;
   color: $background;
   &:hover {
