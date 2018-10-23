@@ -15,6 +15,11 @@ class ChangePassword extends Component {
     }
   }
 
+  clearPasswordInfo = () => this.setState({
+    oldPassword: '',
+    newPassword:''
+  })
+
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
@@ -28,8 +33,11 @@ class ChangePassword extends Component {
     changePassword(this.state, user)
       .then(handleErrors)
       .then(() => flash(messages.changePasswordSuccess, 'flash-success'))
-      .then(() => history.push('/'))
-      .catch(() => flash(messages.changePasswordFailure, 'flash-error'))
+      .then(() => {this.clearPasswordInfo()})
+      .then(() => history.push('/change-password'))
+      .catch(() => {
+        this.clearPasswordInfo()
+        flash(messages.changePasswordFailure, 'flash-error')})
   }
 
   render () {
