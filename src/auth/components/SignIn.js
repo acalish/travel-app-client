@@ -35,9 +35,7 @@ class SignIn extends Component {
 
       .then(res => res.json())
       .then(res => setUser(res.user))
-      .then(() => {
-        this.clearUserInfo()
-        flash(messages.signInSuccess, 'flash-success')})
+      .then(() => {this.clearUserInfo()})
       .then(() => history.push('/trips'))
       .catch(() => {
         this.clearUserInfo()
